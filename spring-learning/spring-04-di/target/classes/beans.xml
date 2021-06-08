@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <bean id="user" class="com.ysx.pojo.User">-->
+<!--        &lt;!&ndash;1.下标赋值&ndash;&gt;-->
+<!--        &lt;!&ndash;        <constructor-arg index="0" value="hhhh"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;-2.参数类型匹配，不建议使用&ndash;&gt;-->
+<!--        &lt;!&ndash;        <constructor-arg type="java.lang.String" value="哈哈哈"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;-3.&ndash;&gt;-->
+<!--        <constructor-arg name="name" value="skld"/>-->
+<!--    </bean>-->
+        <bean id="address" class="com.ysx.pojo.Address">
+            <property name="address" value="北京"/>
+        </bean>
+
+        <bean id="student" class="com.ysx.pojo.Student">
+            <!--第一种，普通值注入，value            -->
+            <property name="name" value="张三"></property>
+            <!--第二种，Bean注入，ref                -->
+            <property name="address" ref="address"/>
+            <!--数组              -->
+            <property name="books">
+                <array>
+                    <value>红楼梦</value>
+                    <value>西游记</value>
+                    <value>三国演义</value>
+                    <value>水浒传</value>
+                </array>
+            </property>
+            <!--     List       -->
+            <property name="hobbys">
+                <list>
+                    <value>听歌</value>
+                    <value>敲代码</value>
+                    <value>看电影</value>
+                </list>
+            </property>
+            <!--    Map    -->
+            <property name="card">
+                <map>
+                    <entry key="身份证" value="11222222"/>
+                    <entry key="银行卡" value="5456123123"/>
+                </map>
+            </property>
+        <!--   Set         -->
+            <property name="games">
+                <set>
+                    <value>LOL</value>
+                    <value>COC</value>
+                    <value>COC</value>
+                </set>
+            </property>
+        <!--   null         -->
+            <property name="wife">
+                <null/>
+            </property>
+        <!--    Properties       -->
+            <property name="info">
+                <props>
+                    <prop key="学号">2019222</prop>
+                    <prop key="性别">男</prop>
+                    <prop key="username">4534</prop>
+                </props>
+            </property>
+        </bean>
+
+</beans>
